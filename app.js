@@ -1,6 +1,8 @@
 const express=require('express');
 const app=express();
+const morgan=require('morgan');
+app.use(morgan('combined'));
 app.get('/',(req,res)=>{
     res.json({"hi":"there"});
 })
-exports.default=app;
+module.exports=app;
