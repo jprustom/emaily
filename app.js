@@ -1,8 +1,22 @@
+//Require express module
 const express=require('express');
+
+
 const app=express();
-const morgan=require('morgan');
-app.use(morgan('combined'));
-app.get('/',(req,res)=>{
-    res.json({"hi":"there"});
+
+
+//Requiring Routes
+const authRoutes=require('./routes/authRoutes.js')
+
+
+//Mapping Routes
+app.use('/auth',authRoutes)
+
+
+//Default Route
+app.get('/',function(req,res){
+    res.send('hai')
 })
+
+
 module.exports=app;
