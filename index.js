@@ -16,8 +16,7 @@ mongoose.connect(mongoDbURI,
     })
         .then(()=>{
             const PORT=process.env.PORT || 3000;
-            server.listen(PORT,function(req,res){
-                res.send(process.env);
+            server.listen(PORT,function(){
                 console.log('listening on port '+PORT);
             });
         });

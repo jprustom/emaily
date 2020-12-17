@@ -14,9 +14,9 @@ const app=express();
 
 
 //Default Route
-// app.get('/',function(req,res){
-//     res.send('hai')
-// })
+app.get('/',function(req,res){
+    res.send(process.env)
+})
 
 
 module.exports=app;
