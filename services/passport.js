@@ -4,7 +4,7 @@ const GoogleStrategy=require('passport-google-oauth20');
 
 
 //Requiring From other scripts
-const {googleClientSecret}=require('../configs/secrets.js');
+const {googleClientSecret,googleClientId}=require('../configs/secrets.js');
 const User=require('../models/User.js');
 
 
@@ -16,9 +16,9 @@ passport.deserializeUser(async function(userId,done){
     const loggedInUser=await User.findById(userId);
     done(null,loggedInUser);
 });
-const googleClientID=process.env.GOOGLE_CLIENT_ID
+
 console.log(googleClientID);
-console.log('secret is',googleClientSecret)
+
 passport.use(new GoogleStrategy({
     clientID:googleClientID,
     clientSecret:googleClientSecret,
