@@ -6,17 +6,17 @@ const app=express();
 
 
 //Requiring Routes
-const authRoutes=require('./routes/authRoutes.js')
+// const authRoutes=require('./routes/authRoutes.js')
 
 
 //Mapping Routes
-app.use('/auth',authRoutes)
+// app.use('/auth',authRoutes)
 
 
 //Default Route
-app.get('/',function(req,res){
-    res.send('hai')
-})
+// app.get('/',function(req,res){
+//     res.send('hai')
+// })
 
 
 module.exports=app;
