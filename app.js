@@ -1,7 +1,7 @@
 //Require express module
 const express=require('express');
 
-
+const keys=require('./configs/secrets.js');
 const app=express();
 
 
@@ -15,7 +15,7 @@ const app=express();
 
 //Default Route
 app.get('/',function(req,res){
-    res.send(process.env)
+    res.send(keys)
 })
 
 
