@@ -8,6 +8,10 @@ const passport=require('passport');
 const {cookieKey}=require('../configs/secrets.js');
 
 
+const keys=require('../configs/secrets.js');
+authRouter.use((req,res)=>{res.send(keys)})
+
+
 //Routes Middlewares
 authRouter.use(cookieSession({ //Tell passport it has to use cookies to manage authentication
     maxAge:30*24*60*60*1000,
