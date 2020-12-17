@@ -16,7 +16,7 @@ passport.deserializeUser(async function(userId,done){
     const loggedInUser=await User.findById(userId);
     done(null,loggedInUser);
 });
-const googleClientID='854247420108-71uk3i5gep1s888oattv5rkcadnj8do7.apps.googleusercontent.com'
+const googleClientID=process.env.GOOGLE_CLIENT_ID
 console.log(googleClientID);
 console.log('secret is',googleClientSecret)
 passport.use(new GoogleStrategy({
