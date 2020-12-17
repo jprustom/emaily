@@ -14,9 +14,9 @@ app.use('/auth',authRoutes)
 
 
 //Default Route
-app.get('/',function(req,res){
-    res.send('hai')
-})
+// app.get('/',function(req,res){
+//     res.send('hai')
+// })
 
 
 module.exports=app;
