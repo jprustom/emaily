@@ -5,8 +5,8 @@ const mongoose=require('mongoose');
 
 //Require from other scripts
 const {mongoDbURI}=require('./configs/secrets.js');
-console.log('creating server')
 const app=require('./app.js');
+
 
 const server=http.createServer(app);
 mongoose.connect(mongoDbURI,
