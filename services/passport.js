@@ -4,7 +4,7 @@ const GoogleStrategy=require('passport-google-oauth20');
 
 
 //Requiring From other scripts
-const keys=require('../configs/secrets.js');
+const {googleClientID,googleClientSecret}=require('../configs/secrets.js');
 const User=require('../models/User.js');
 
 
@@ -17,8 +17,8 @@ passport.deserializeUser(async function(userId,done){
     done(null,loggedInUser);
 });
 passport.use(new GoogleStrategy({
-    clientID:keys.googleClientID,
-    clientSecret:keys.googleClientSecret,
+    clientID:googleClientID,
+    clientSecret:googleClientSecret,
     callbackURL:'/auth/google/callback'
 },callBackFunctionOnSignIn));
 
