@@ -23,8 +23,16 @@ require('../services/passport.js');
 authRouter.get('/google',passport.authenticate('google',{
     scope:['profile','email']
 }))
-authRouter.get('/google/callback',passport.authenticate('google'),(req,res)=>{res.send('hi')})
-authRouter.get('/logout',(req,res)=>{res.send(req.logout());})
+authRouter.get('/google/callback',
+    passport.authenticate('google'),
+    function(req,res){
+        res.redirect('/surveys')
+        }
+    );
+authRouter.get('/logout',function (req,res){
+    req.logout();
+    res.redirect('/');
+})
 authRouter.get('/user',(req,res)=>{res.send(req.user)})
 
 
