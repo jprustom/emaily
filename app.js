@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 if (process.env.NODE_ENV){
     app.use(express.static('client/build'));
     app.get('*',function(req,res){
-        res.sendFile('client/build/index.html');
+        const path=require('path');      
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
 }
 
@@ -27,10 +28,7 @@ app.use('/auth',authRoutes)
 app.use('/payment',paymentRoutes);
 
 
-//Default Route
-app.get('/',function(req,res){
-    res.send('hai')
-})
+
 
 
 module.exports=app;
