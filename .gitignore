@@ -1,2 +1,2 @@
 node_modules
-configs/secrets-dev.js
+secrets/secrets-dev.js

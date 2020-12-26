@@ -6,8 +6,12 @@ import {BrowserRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 
+import axios from 'axios';
 import rootReducer from './store/reducers';
 import App from './components/App/App.js';
+
+
+window.axios=axios;
 
 
 const store=createStore(rootReducer,applyMiddleware(thunk));
@@ -18,3 +22,4 @@ ReactDOM.render(
         </BrowserRouter>
     </Provider>,
     document.getElementById('root'));
+

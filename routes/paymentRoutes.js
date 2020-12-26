@@ -5,10 +5,12 @@ const axios=require('axios');
 
 
 //Requiring From Other Scripts
-const {tapSecretKey}=require('../configs/secrets.js');
+const {secrets,tapChargeApiEndpoint,domain}=require('../configs.js');
+const {tapSecretKey}=secrets;
+const isLoggedIn = require('../middlewares/isLoggedIn.js');
 
 
-paymentRouter.post('/charge',async function(req,res){
+paymentRouter.post('/charge',isLoggedIn,async function(req,res){
     const chargeBody={
         "amount": 5,
         "currency": "USD",
@@ -34,16 +36,16 @@ paymentRouter.post('/charge',async function(req,res){
         },
         
         "redirect": {
-            "url": "https://www.google.com"
+            "url": domain //not working 
         }
         }
     try{
-        const response=await axios.post('https://api.tap.company/v2/charges',chargeBody,{
+        const response=await axios.post(tapChargeApiEndpoint,chargeBody,{
             headers:{
             "Authorization":`Bearer ${tapSecretKey}`
         }
         });
-        res.redirect('http://localhost:3000')
+        res.redirect(domain)
         console.log(response);
     }
     catch(err){

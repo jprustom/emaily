@@ -1,4 +1,4 @@
-import {CHECK_AUTH} from '../actions/acionsTypes.js';
+import {CHECK_AUTH} from '../actions/actionsTypes.js';
 
 
 const initialAuthReducerState=null;

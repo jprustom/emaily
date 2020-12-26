@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom';
 
 
 function LoginGoogleButton(){
-    return <li><a href='/auth/google'>Login With Google</a></li>
+    return <li><a href='/api/auth/google'>Login With Google</a></li>
 }
 function CreditsNumber(props){
     const creditsNumber=props.auth.credits;
     return <li>Credits: {creditsNumber}</li>
 }
 function LogoutButton(){
-    return <li><a href='/auth/logout'>Logout</a></li>
+    return <li><a href='/api/auth/logout'>Logout</a></li>
 }
 function renderBrandTitle(auth){
     const brandTitleLink=
@@ -21,7 +21,7 @@ function renderBrandTitle(auth){
     return <Link to={brandTitleLink} className="left brand-logo">Emailey</Link>;
 }
 function BuyCreditsButton(){
-    return <li><Link to='/payment/checkout'>Buy Credits</Link></li>
+    return <li><Link to='/api/payment/checkout'>Buy Credits</Link></li>
 }
 function renderButtons(auth){
     switch (auth){

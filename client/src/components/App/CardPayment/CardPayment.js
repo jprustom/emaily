@@ -84,7 +84,7 @@ function tapTokenHandler(token,formElement) {
 }
 export default function CardPayment(){
     useEffect(mountCard,[]);
-    return <form onSubmit={onCardPaymentSubmit} id={CardPaymentStyles['form-container']} method="post" action="/payment/charge">
+    return <form onSubmit={onCardPaymentSubmit} id={CardPaymentStyles['form-container']} method="post" action="/api/payment/charge">
                 <div style={{textAlign:'center',fontSize:'20px',marginTop:'10px'}}>Buy Five Credits With 5$</div>
                 <div id="element-container"></div>
                 <div id="error-handler" role="alert"></div>

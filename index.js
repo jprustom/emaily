@@ -4,7 +4,8 @@ const mongoose=require('mongoose');
 
 
 //Require from other scripts
-const {mongoDbURI}=require('./configs/secrets.js');
+const {secrets}=require('./configs.js');
+const {mongoDbURI}=secrets;
 const app=require('./app.js');
 
 
